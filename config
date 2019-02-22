@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec lxterminal -e zsh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -207,10 +207,10 @@ exec_always pulseaudio --start --exit-idle-time=-1 # restart pulseaudio
 # wallpaper
 exec_always feh --bg-fill ~/.config/i3/wallpaper/1.png
 # locking (use .png only images)
-bindsym $mod+shift+x exec i3lock --ignore-empty-password -i ~/.config/i3/wallpaper/no_panic.png \ #--color=DDDDDD \
+bindsym $mod+shift+x exec i3lock --ignore-empty-password -i ~/.config/i3/wallpaper/no_panic.png \
     & (sleep 5 && xset dpms force off)
 exec --no-startup-id xset dpms 600 # wait 10 minutos to turn off screens
-exec --no-startup-id xautolock -time 10 -locker i3lock #autolock in 10min
+exec --no-startup-id xautolock -time 10 -locker i3lock --ignore-empty-password -i ~/.config/i3/wallpaper/no_panic.png #autolock in 10min
 exec --no-startup-id pulseaudio
 
 # start dmenu (a program launcher)
@@ -221,5 +221,5 @@ bindsym $mod+d exec dmenu_run -b -l 10 -nb "$bg-color" -nf "$text-color"
 exec_always dunst
 
 # screen shot
-bindsym $mod+Shift+s exec flameshot gui -p ~/Pictures
+bindsym Print exec flameshot gui -p ~/Pictures
 
