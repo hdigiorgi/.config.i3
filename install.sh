@@ -10,7 +10,7 @@ sudo apt-get install -y i3-wm fish dmenu feh i3status i3blocks \
 rm ~/.config/lxterminal/lxterminal.conf
 rm ~/.zshrc
 
-cp zshrc ~/.zshrc
+cp .zshrc ~/.zshrc
 cp lxterminal.conf ~/.config/lxterminal/lxterminal.conf
 
 if [ ! -d ~/.oh-my-zsh ]; then
