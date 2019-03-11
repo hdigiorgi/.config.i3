@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec lxterminal -e zsh
+bindsym $mod+Return exec lxterminal -e fish
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -207,6 +207,11 @@ bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ 
 bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
 bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
 exec_always pulseaudio --start --exit-idle-time=-1 # restart pulseaudio
+
+# color change
+bindsym $mod+shift+F11 exec xcalib -clear
+bindsym $mod+shift+F12 exec xcalib -clear && \
+    xcalib -a -red 1.1 10.0 100.0 -green 1.1 10.0 100.0 -blue 1 8.0 30.0
 
 # wallpaper
 exec_always feh --bg-fill ~/.config/i3/wallpaper/1.png
