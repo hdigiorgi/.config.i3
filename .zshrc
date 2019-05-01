@@ -8,7 +8,9 @@ plugins=(
   python
   pyenv
   zsh-nvm
+  zsh-autosuggestions
 )
+
 
 
 

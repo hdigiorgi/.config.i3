@@ -15,12 +15,18 @@ cp lxterminal.conf ~/.config/lxterminal/lxterminal.conf
 if [ ! -d ~/.oh-my-zsh ]; then
     git clone https://github.com/robbyrussell/oh-my-zsh ~/.zshrc
 fi
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+fi
 
 # npm
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sudo npm install -g avn avn-nvm avn-n
+if ! dpkg -s nodejs; then
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    sudo npm install -g avn avn-nvm avn-n
+fi
 avn setup
+
 
 # NVM
 
