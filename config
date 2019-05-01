@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec lxterminal -e fish
+bindsym $mod+Return exec lxterminal -e zsh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -211,7 +211,7 @@ exec_always pulseaudio --start --exit-idle-time=-1 # restart pulseaudio
 # color change
 bindsym $mod+shift+F11 exec xcalib -clear
 bindsym $mod+shift+F12 exec xcalib -clear && \
-    xcalib -a -red 1.1 10.0 100.0 -green 1.1 10.0 100.0 -blue 1 8.0 30.0
+    xcalib -a -red 1.1 10.0 100.0 -green 1.1 10.0 100.0 -blue 1.1 0.1 60.0
 
 # wallpaper
 exec_always feh --bg-fill ~/.config/i3/wallpaper/1.png

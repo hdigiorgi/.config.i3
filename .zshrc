@@ -7,7 +7,9 @@ plugins=(
   git
   python
   pyenv
+  zsh-nvm
 )
+
 
 
 source $ZSH/oh-my-zsh.sh
