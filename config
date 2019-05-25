@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec lxterminal -e zsh
+bindsym $mod+Return exec lxterminal -e fish
 
 # kill focused window
 bindsym $mod+Shift+q kill
