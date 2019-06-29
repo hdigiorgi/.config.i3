@@ -203,9 +203,9 @@ new_window pixel 2
 
 
 # volume control
-bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '-5%'
-bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
-bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym $mod+shift+F1 exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '-5%'
+bindsym $mod+shift+F2 exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '+5%'
+bindsym $mod+shift+F3 exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
 exec_always pulseaudio --start --exit-idle-time=-1 # restart pulseaudio
 
 # color change
@@ -216,11 +216,9 @@ bindsym $mod+shift+F12 exec xcalib -clear && \
 # wallpaper
 exec_always feh --bg-fill ~/.config/i3/wallpaper/1.png
 # locking (use .png only images)
-bindsym $mod+shift+x exec i3lock --ignore-empty-password -i ~/.config/i3/wallpaper/no_panic.png \
-    & (sleep 5 && xset dpms force off)
-exec --no-startup-id xset dpms 600 # wait 10 minutos to turn off screens
-exec --no-startup-id xautolock -time 10 -locker i3lock --ignore-empty-password -i ~/.config/i3/wallpaper/no_panic.png #autolock in 10min
-exec --no-startup-id pulseaudio
+bindsym $mod+shift+x exec "~/.config/i3/block_screen.sh"
+exec_always xautolock -corners -+++ -cornersize 30 -cornerdelay 3 -time 10 \
+    -locker '~/.config/i3/block_screen.sh'
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -b -l 10 -nb "$bg-color" -nf "$text-color"
