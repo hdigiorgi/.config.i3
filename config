@@ -217,7 +217,7 @@ bindsym $mod+shift+F12 exec xcalib -clear && \
 exec_always feh --bg-fill ~/.config/i3/wallpaper/1.png
 # locking (use .png only images)
 bindsym $mod+shift+x exec "~/.config/i3/block_screen.sh"
-exec_always xautolock -corners -+++ -cornersize 30 -cornerdelay 1 -time 10 \
+exec_always xautolock -corners --++ -cornersize 30 -cornerdelay 1 -time 10 \
     -locker '~/.config/i3/block_screen.sh'
 
 # start dmenu (a program launcher)
