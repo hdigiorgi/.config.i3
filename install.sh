@@ -9,9 +9,15 @@ sudo apt-get install -y i3-wm fish dmenu feh i3status i3blocks \
         i3lock leafpad flameshot dunst lxterminal zsh git xcalib \
         curl fish xfconf dmz-cursor-theme lxappearance
 
-cp .zshrc ~/.zshrc
+# lxterminal
 cp lxterminal.conf ~/.config/lxterminal/lxterminal.conf
+
+# startx i3
 cp xinitrc ~/.xinitrc
+
+# fish
+mkdir -p ~/.config/fish
+cp config.fish ~/.config/fish/config.fish
 
 # icons, theme
 # lxappearance

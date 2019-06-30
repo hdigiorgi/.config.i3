@@ -230,3 +230,4 @@ exec_always dunst
 # screen shot
 bindsym Print exec flameshot gui -p ~/Pictures
 
+exec_always ~/.config/i3/init.sh
