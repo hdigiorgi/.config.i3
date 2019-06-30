@@ -8,7 +8,7 @@ sudo apt-get install -y i3-wm fish dmenu feh i3status i3blocks \
         pcmanfm lm-sensors fonts-font-awesome fonts-powerline \
         i3lock flameshot dunst lxterminal zsh git xcalib \
         curl fish xfconf dmz-cursor-theme lxappearance \
-        xautolock xss-lock network-manager
+        xautolock xss-lock network-manager htop
 
 # lxterminal
 mkdir -p ~/.config/lxterminal/

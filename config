@@ -31,6 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec lxterminal -e fish
+bindsym Control+Mod1+Mod4 exec lxterminal -e htop
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -230,5 +231,11 @@ exec_always dunst
 
 # screen shot
 bindsym Print exec flameshot gui -p ~/Pictures
+
+# keyboard
+# xinput list
+# xinput list-props <device-id>
+# set-prop <device-id> <property-id> 1
+exec_always xinput set-prop 11 289 1
 
 exec_always ~/.config/i3/init.sh
