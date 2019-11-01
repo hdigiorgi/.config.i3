@@ -17,9 +17,8 @@ cp lxterminal.conf ~/.config/lxterminal/lxterminal.conf
 # startx i3
 cp xinitrc ~/.xinitrc
 
-# fish
-mkdir -p ~/.config/fish
-cp config.fish ~/.config/fish/config.fish
+# bash
+cp bashrc ~/.bashrc
 
 # fonts
 mkdir -p ~/.fonts

@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec lxterminal -e fish
+bindsym $mod+Return exec lxterminal -e 'bash -c "fish"'
 bindsym Control+Mod1+Mod4 exec lxterminal -e htop
 
 # kill focused window
@@ -167,8 +167,6 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    mode hide
-    hidden_state hide
     modifier $mod
 
     font pango:"Font Awesome 5 Free", Solid 9
@@ -202,6 +200,9 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 hide_edge_borders both
 new_window pixel 2
 
+# multiple monitors
+focus_follows_mouse no
+bindsym $mod+m move workspace to output left
 
 # volume control
 bindsym $mod+shift+F1 exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ '-5%'
@@ -218,12 +219,12 @@ bindsym $mod+shift+F12 exec xcalib -clear && \
 exec_always feh --bg-fill ~/.config/i3/wallpaper/1.png
 # locking (use .png only images)
 bindsym $mod+shift+x exec "~/.config/i3/block_screen.sh"
-exec_always xautolock -corners --++ -cornersize 30 -cornerdelay 1 -time 10 \
+exec_always xautolock -corners --++ -cornersize 3 -cornerdelay 1 -time 10 \
     -locker '~/.config/i3/block_screen.sh'
 exec_always xss-lock -- ~/.config/i3/block_screen.sh
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -b -l 10 -nb "$bg-color" -nf "$text-color"
+bindsym $mod+d exec dmenu_run -b -l 10 -nb "$bg-color" -nf "$text-color" -p "$" -i
 
 # notifications
 # you can test it with notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-information
@@ -238,4 +239,5 @@ bindsym Print exec flameshot gui -p ~/Pictures
 # set-prop <device-id> <property-id> 1
 exec_always xinput set-prop 11 289 1
 
+# init script
 exec_always ~/.config/i3/init.sh
